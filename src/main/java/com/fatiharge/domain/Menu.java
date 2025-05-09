@@ -22,7 +22,7 @@ public class Menu extends PanacheEntity {
 
     @NotNull
     @Column(name = "serving_size", nullable = false)
-    public Integer servingSize;
+    public String servingSize;
 
     @NotNull
     @Column(name = "calories", nullable = false)
