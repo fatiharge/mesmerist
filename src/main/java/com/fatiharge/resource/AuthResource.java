@@ -17,7 +17,6 @@ import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 
 
 @Path("/auth")
-@Authenticated
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class AuthResource {
