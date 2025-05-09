@@ -33,8 +33,12 @@ public class Menu extends PanacheEntity {
     public String ingredients;
 
     @NotNull
-    @Column(unique = true)
+    @Column()
     public String imagePath;
+
+    @NotNull
+    @Column(unique = true)
+    public String name;
 
     @NotNull
     @Column(name = "preparation", nullable = false)
