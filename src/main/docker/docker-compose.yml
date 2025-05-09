@@ -1,0 +1,42 @@
+services:
+  mesmerist-api-db:
+    container_name: mesmerist-api-db
+    image: postgres:16.3
+    volumes:
+      - /var/lib/mesmerist-api-db:/var/lib/postgresql/data
+    labels:
+      - "traefik.tcp.routers.mesmerist-api-db.rule=HostSNI(`mesmerist-api-db.fatiharge.com`)"
+      - "traefik.tcp.routers.mesmerist-api-db.entrypoints=tcp"
+      - "traefik.tcp.routers.mesmerist-api-db.tls.certresolver=myresolver"
+      - "traefik.tcp.services.mesmerist-api-db.loadbalancer.server.port=5432"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    networks:
+      - reverse-proxy
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+  mesmerist-api:
+    image: quarkus/mesmerist-api-jvm
+    container_name: mesmerist-api
+    depends_on:
+      mesmerist-api-db:
+        condition: service_healthy
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    labels:
+      - "traefik.http.routers.mesmerist-api.rule=Host(`mesmerist-api.fatiharge.com`)"
+      - "traefik.http.routers.mesmerist-api.entrypoints=websecure"
+      - "traefik.http.routers.mesmerist-api.tls.certresolver=myresolver"
+      - "traefik.http.services.mesmerist-api.loadbalancer.server.port=8080"
+    networks:
+      - reverse-proxy
+networks:
+  reverse-proxy:
+    external: true
