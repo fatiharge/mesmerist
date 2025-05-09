@@ -1,10 +1,10 @@
-package com.fatiharge.user.resource;
+package com.fatiharge.resource;
 
 
 import com.fatiharge.core.filter.GlobalExceptionResponse;
 import com.fatiharge.shared.user.dto.user.CreateUserRequest;
 import com.fatiharge.shared.user.dto.user.UserResponse;
-import com.fatiharge.user.service.UserService;
+import com.fatiharge.service.UserService;
 import io.quarkus.security.Authenticated;
 import jakarta.annotation.security.RolesAllowed;
 import jakarta.inject.Inject;

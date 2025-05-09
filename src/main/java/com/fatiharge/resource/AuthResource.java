@@ -1,10 +1,10 @@
-package com.fatiharge.user.resource;
+package com.fatiharge.resource;
 
 
 import com.fatiharge.core.filter.GlobalExceptionResponse;
 import com.fatiharge.shared.user.dto.auth.LoginRequest;
 import com.fatiharge.shared.user.dto.auth.TokenResponse;
-import com.fatiharge.user.service.AuthService;
+import com.fatiharge.service.AuthService;
 import io.quarkus.security.Authenticated;
 import io.quarkus.security.UnauthorizedException;
 import jakarta.inject.Inject;
@@ -17,6 +17,7 @@ import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 
 
 @Path("/auth")
+@Authenticated
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class AuthResource {

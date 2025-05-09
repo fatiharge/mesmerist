@@ -1,9 +1,9 @@
-package com.fatiharge.user.mapper;
+package com.fatiharge.mapper;
 
 
 import com.fatiharge.shared.user.dto.user.CreateUserRequest;
 import com.fatiharge.shared.user.dto.user.UserResponse;
-import com.fatiharge.user.domain.User;
+import com.fatiharge.domain.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

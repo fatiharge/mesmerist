@@ -1,6 +1,6 @@
-package com.fatiharge.product.repository;
+package com.fatiharge.repository;
 
-import com.fatiharge.product.domain.Categories;
+import com.fatiharge.domain.Categories;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 

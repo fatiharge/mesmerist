@@ -1,4 +1,4 @@
-package com.fatiharge.user.domain;
+package com.fatiharge.domain;
 
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;

@@ -1,10 +1,10 @@
-package com.fatiharge.user.service;
+package com.fatiharge.service;
 
 import com.fatiharge.shared.user.dto.user.CreateUserRequest;
 import com.fatiharge.shared.user.dto.user.UserResponse;
-import com.fatiharge.user.domain.User;
-import com.fatiharge.user.mapper.UserMapper;
-import com.fatiharge.user.repository.UserRepository;
+import com.fatiharge.domain.User;
+import com.fatiharge.mapper.UserMapper;
+import com.fatiharge.repository.UserRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 

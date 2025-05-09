@@ -1,8 +1,8 @@
-package com.fatiharge.user.repository;
+package com.fatiharge.repository;
 
 
-import com.fatiharge.user.domain.User;
-import com.fatiharge.user.exception.UserNotFoundException;
+import com.fatiharge.domain.User;
+import com.fatiharge.exception.UserNotFoundException;
 import io.quarkus.elytron.security.common.BcryptUtil;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;

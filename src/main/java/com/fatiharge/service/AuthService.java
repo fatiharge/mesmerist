@@ -1,11 +1,11 @@
-package com.fatiharge.user.service;
+package com.fatiharge.service;
 
 
 import com.fatiharge.shared.user.dto.auth.LoginRequest;
 import com.fatiharge.shared.user.dto.auth.TokenResponse;
-import com.fatiharge.user.domain.User;
-import com.fatiharge.user.exception.UserNotFoundException;
-import com.fatiharge.user.repository.UserRepository;
+import com.fatiharge.domain.User;
+import com.fatiharge.exception.UserNotFoundException;
+import com.fatiharge.repository.UserRepository;
 import io.smallrye.jwt.build.Jwt;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;

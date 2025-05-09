@@ -1,4 +1,4 @@
-package com.fatiharge.user.exception;
+package com.fatiharge.exception;
 
 import com.fatiharge.core.abstracts.CustomRuntimeException;
 

@@ -4,7 +4,6 @@ import jakarta.validation.constraints.NotBlank;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 
-
 public class UserResponse {
     @NotBlank()
     public Long id;
@@ -15,7 +14,5 @@ public class UserResponse {
     @Schema(examples = "Wood", required = true)
     public String surname;
 }
-
-
 
 
