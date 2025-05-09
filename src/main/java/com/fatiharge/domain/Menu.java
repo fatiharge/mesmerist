@@ -29,7 +29,6 @@ public class Menu extends PanacheEntity {
     public Integer calories;
 
     @NotNull
-    @Lob
     @Column(name = "ingredients", nullable = false)
     public String ingredients;
 
@@ -38,7 +37,6 @@ public class Menu extends PanacheEntity {
     public String imagePath;
 
     @NotNull
-    @Lob
     @Column(name = "preparation", nullable = false)
     public String preparation;
 
