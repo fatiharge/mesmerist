@@ -22,7 +22,6 @@ public class Feedback extends PanacheEntity {
     public String fullName;
 
     @NotNull
-    @Email
     public String email;
 
     @NotNull
