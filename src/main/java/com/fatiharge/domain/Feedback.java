@@ -23,7 +23,6 @@ public class Feedback extends PanacheEntity {
 
     @NotNull
     @Email
-    @Column(unique = true)
     public String email;
 
     @NotNull
